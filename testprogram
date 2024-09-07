@@ -1,0 +1,41 @@
+import javax.swing.*;
+import java.awt.*;
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
+
+public class WelcomePage {
+    public static void main(String[] args) {
+        // Create a new JFrame
+        JFrame frame = new JFrame("Welcome");
+        frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+
+        // Create a panel for the content
+        JPanel panel = new JPanel();
+        panel.setLayout(new FlowLayout());
+
+        // Add a heading label
+        JLabel heading = new JLabel("Welcome to Our Website!");
+        heading.setFont(new Font("Arial", Font.BOLD, 24));
+        panel.add(heading);
+
+        // Add a paragraph label
+        JLabel paragraph = new JLabel("We're glad you're here.");
+        panel.add(paragraph);
+
+        // Add a button
+        JButton button = new JButton("Learn More");
+        button.addActionListener(new ActionListener() {
+            public void actionPerformed(ActionEvent e) {
+                JOptionPane.showMessageDialog(frame, "Welcome to our website!");
+            }
+        });
+        panel.add(button);
+
+        // Add the panel to the frame
+        frame.getContentPane().add(panel);
+
+        // Set the frame size and make it visible
+        frame.setSize(400, 300);
+        frame.setVisible(true);
+    }
+}
